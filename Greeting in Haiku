@@ -1,0 +1,9 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract CryptoHaikuGreeting {
+    // Returns a fixed haiku about Ethereum
+    function getHaiku() external pure returns (string memory) {
+        return "Blocks weave, gas burns slow\nMiners dance in cryptic light\nDreams on chains will grow";
+    }
+}
