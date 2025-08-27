@@ -1,0 +1,15 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract OnChainBoard {
+    string[] public messages;
+
+    function postMessage(string calldata msgText) external {
+        require(bytes(msgText).length <= 100, "Message too long");
+        messages.push(msgText);
+    }
+
+    function getAllMessages() external view returns (string[] memory) {
+        return messages;
+    }
+}
