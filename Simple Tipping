@@ -1,0 +1,12 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SimpleTipping {
+    event Tipped(address indexed from, address indexed to, uint256 amount);
+
+    function tip(address payable recipient) external payable {
+        require(msg.value > 0, "Send ETH to tip");
+        recipient.transfer(msg.value);
+        emit Tipped(msg.sender, recipient, msg.value);
+    }
+}
